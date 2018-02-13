@@ -1,0 +1,155 @@
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+   <android.support.design.widget.CoordinatorLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <android.support.design.widget.AppBarLayout
+           android:layout_width="match_parent"
+           android:layout_height="120dp"
+           >
+           <android.support.design.widget.CollapsingToolbarLayout
+               app:titleEnabled="true"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+               app:contentScrim="?attr/colorPrimary"
+               app:collapsedTitleGravity="center"
+               app:layout_scrollFlags="scroll|exitUntilCollapsed"
+               >
+               <RelativeLayout
+                   android:id="@+id/slideshow"
+                   android:layout_width="match_parent"
+                   android:layout_height="120dp">
+                   <android.support.v4.view.ViewPager
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/sLide_picture_view_pager"
+                       android:layout_alignParentTop="true"
+                       android:layout_alignParentLeft="true"
+                       android:layout_alignParentStart="true" />
+                   <LinearLayout
+                       android:layout_alignParentBottom="true"
+                       android:orientation="horizontal"
+                       android:id="@+id/linear_content"
+                       android:layout_alignParentRight="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+
+                   </LinearLayout>
+
+               </RelativeLayout>
+
+           </android.support.design.widget.CollapsingToolbarLayout>
+       </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+
+        android:layout_above="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+             <RadioGroup
+
+
+                      android:layout_below="@id/slideshow"
+                      android:id="@+id/top_radio_group"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+                  <!--
+                  设置默认选中第一个按钮。
+                  -->
+                 <RadioButton
+                        android:checked="true"
+                     style="@style/Radiobuttonbase"
+                     android:id="@+id/radioButton1"
+                     android:layout_height="30dp"
+                     android:text="@string/top_radio_button_name_1" />
+
+                 <RadioButton
+                     style="@style/Radiobuttonbase"
+                     android:id="@+id/radioButton2"
+                     android:layout_height="30dp"
+                     android:text="@string/top_radio_button_name_2" />
+
+
+             </RadioGroup
+                         >
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="3dp">
+
+                 <ImageView
+                     android:id="@+id/line_progress_bar"
+                     android:layout_width="100dp"
+                     android:layout_height="1dp"
+                     android:background="@color/black"
+                     />
+
+                 <ImageView
+                     android:layout_below="@id/line_progress_bar"
+                     android:id="@+id/line_progress_bar_background"
+                     android:layout_width="match_parent"
+                     android:layout_height="1px"
+                     android:background="@color/black"
+                 />
+
+             </RelativeLayout>
+
+             <android.support.v4.view.ViewPager
+                 android:id="@+id/Movie_list_View_pager"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+             </android.support.v4.view.ViewPager>
+
+
+         </LinearLayout>
+      </android.support.v4.widget.NestedScrollView>
+    <!--
+          分割线！
+                 -->
+
+    </android.support.design.widget.CoordinatorLayout>
+    <ImageView
+        android:layout_above="@+id/bottom_radio_group"
+        android:id="@+id/bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/black"/>
+    />
+      <RadioGroup
+          android:background="#fff"
+        android:id="@+id/bottom_radio_group"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:checked="true"
+            style="@style/Radiobuttonbase"
+            android:id="@+id/bottom_radio_group_1"
+            android:text="@string/bottom_radio_button_name_1"
+           android:layout_height="wrap_content" />
+        <RadioButton
+            style="@style/Radiobuttonbase"
+            android:id="@+id/bottom_radio_group_2"
+            android:text="@string/bottom_radio_button_name_2"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+
+</RelativeLayout>

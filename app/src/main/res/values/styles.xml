@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="textbase">
+        <item name="android:layout_width">150dp</item>
+
+        <item name="android:layout_height">wrap_content</item>
+         <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+
+    </style>
+    <style name="detailtextbase">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <style name="RadioButtonBasemonth">
+
+        <item name="android:textColor">@color/monthradiobuttonslector</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+
+    </style>
+    <style name="Radiobuttonbase">
+        <item name="android:textColor">@color/topradiobuttoncolorselector</item>
+        <item name="android:width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="detailImageViewBase">
+
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">130dp</item>
+          
+    </style>
+    <style name="actorNameTextBase">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+
+    </style>
+    <style name="detail_performance_relative">
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+</resources>

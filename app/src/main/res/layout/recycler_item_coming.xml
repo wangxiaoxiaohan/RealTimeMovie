@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/item_coming_movie"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+
+
+        android:id="@+id/item_coming_poster"
+        android:layout_width="80dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="15dp"
+        />
+    <LinearLayout
+
+
+        android:id="@+id/item_coming_Linear"
+        android:layout_width="wrap_content"
+        android:layout_height="108dp"
+        android:orientation="vertical"
+        android:layout_alignTop="@+id/item_coming_poster"
+        android:layout_toRightOf="@+id/item_coming_poster"
+        android:layout_toEndOf="@+id/item_coming_poster">
+        <TextView
+
+            android:textStyle="bold"
+            android:textSize="18sp"
+             android:textColor="@color/black"
+            android:id="@+id/text_coming_MovieName"
+            style="@style/textbase"
+            />
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/director_coming__text"
+            style="@style/textbase"
+            />
+
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/actor_coming_text"
+            style="@style/textbase" />
+        <TextView
+          style="@style/textbase"
+
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/item_more_coming_button"
+        android:textColor="@color/tomato"
+        android:text="@string/item_button_1"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_coming_Linear"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/border_corner"
+
+        />
+
+</RelativeLayout>

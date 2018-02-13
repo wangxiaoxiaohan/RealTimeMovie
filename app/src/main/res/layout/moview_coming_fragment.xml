@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+           >
+            <RadioButton
+                android:text="@string/comingAll"
+                android:checked="true"
+                android:id="@+id/comingAllRadiobutton"
+               style="@style/RadioButtonBasemonth"
+                />
+            <RadioButton
+               android:text="x月"
+                android:id="@+id/comingThisMonthRadiobutton"
+                style="@style/RadioButtonBasemonth"
+                />
+            <RadioButton
+                android:text="y月"
+                android:id="@+id/comingNextMonthRadiobutton"
+                style="@style/RadioButtonBasemonth"
+                />
+            <RadioButton
+                android:text="z月"
+                android:id="@+id/comingSecondFolingRadiobutton"
+                style="@style/RadioButtonBasemonth"
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/movie_coming_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

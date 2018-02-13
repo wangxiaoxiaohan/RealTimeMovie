@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+          android:scaleType="centerCrop"
+        android:layout_margin="7dp"
+        android:id="@+id/item_poster"
+        android:layout_width="81dp"
+        android:layout_height="108dp" />
+    <LinearLayout
+
+
+        android:layout_toRightOf="@id/item_poster"
+        android:id="@+id/item_Linear"
+        android:layout_width="wrap_content"
+        android:layout_height="108dp"
+        android:orientation="vertical">
+       <TextView
+           android:textColor="@color/black"
+           android:textStyle="bold"
+           android:textSize="18sp"
+
+           android:id="@+id/text_MovieName"
+           style="@style/textbase"
+         />
+
+        <LinearLayout
+            android:id="@+id/item_Linear_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <example.wanghan.com.realtimemovie.widget.RatingBar
+                android:layout_marginTop="4dp"
+
+                android:id="@+id/star_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:starEmpty="@drawable/emptystar"
+            app:starFill="@drawable/fillstar"
+            app:starSize="9sp"
+            />
+            <TextView
+
+                android:id="@+id/score_text"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"/>
+         </LinearLayout>
+
+        <TextView
+
+            android:id="@+id/director_text"
+            style="@style/textbase"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/actor_text"
+            style="@style/textbase" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/item_more_button"
+        android:textColor="@color/red"
+        android:text="@string/item_button_1"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_Linear"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/border_corner"
+
+        />
+
+</RelativeLayout>

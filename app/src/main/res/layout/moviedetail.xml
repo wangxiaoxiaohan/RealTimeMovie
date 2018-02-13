@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorlayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:titleEnabled="true"
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentScrim="?attr/colorPrimary"
+            app:collapsedTitleGravity="center"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            >
+
+            <FrameLayout
+                android:id="@+id/fr_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/detail_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="105dp"
+                    android:layout_marginRight="105dp"
+                    android:layout_marginTop="70dp"
+
+                    />
+            </FrameLayout>
+            <android.support.v7.widget.Toolbar
+
+                android:background="@color/colorPrimary"
+                android:id="@+id/title_toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+
+                />
+        </android.support.design.widget.CollapsingToolbarLayout>
+     </android.support.design.widget.AppBarLayout>
+
+     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+
+            android:id="@+id/nest_inner_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--电影信息！ -->
+            <include layout="@layout/nestscroll_movieinfo" />
+            <!--电影简介！ -->
+            <example.wanghan.com.realtimemovie.widget.expandableTextView
+                android:id="@+id/introduction_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:maxLine="3"
+                app:textColor="@color/black"
+                app:textSize="5sp">
+
+            </example.wanghan.com.realtimemovie.widget.expandableTextView>
+            <!--影人！ -->
+            <include layout="@layout/nestscroll_actors"/>
+
+            <!--评论列表！   暂时使用scrollEnable属性禁用滑动，避免滑动冲突！
+             后续会使用滑动冲突解决方案。-->
+            <android.support.v7.widget.RecyclerView
+
+                android:id="@+id/movieDetailCommitRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+   <ProgressBar
+       android:id="@+id/progress_detail"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:indeterminate="true"
+       android:indeterminateTint="?android:colorAccent"
+       android:indeterminateTintMode="src_in" />
+
+</android.support.design.widget.CoordinatorLayout>

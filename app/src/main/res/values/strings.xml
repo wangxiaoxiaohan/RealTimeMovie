@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">时光电影</string>
+    <string name="bottom_radio_button_name_1">热映</string>
+    <string name="bottom_radio_button_name_2">切换城市</string>
+    <string name="top_radio_button_name_1">正在热映</string>
+    <string name="top_radio_button_name_2">即将上映</string>
+    <string name="item_button_1">更多</string>
+    <string name="comingAll">全部</string>
+    <string name="movieListDirectorName">导演:</string>
+    <string name="longtext">从创立之初，百度便将“让人们最平等便捷地获取信息，找到所求”作为自己的使命ahhahaahashgfahjgfahgf</string>
+
+</resources>
