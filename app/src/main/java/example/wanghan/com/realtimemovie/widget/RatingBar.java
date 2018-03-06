@@ -103,6 +103,7 @@ public class RatingBar extends View {
             canvas.drawRect(0,0,starMark*startSize,startSize,paint);
 
         }
+
     }
 
 

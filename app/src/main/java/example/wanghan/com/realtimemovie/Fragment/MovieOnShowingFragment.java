@@ -106,7 +106,7 @@ public class MovieOnShowingFragment extends Fragment {
        progressBar.setVisibility(View.INVISIBLE);
    }
 
-   private void getServiceData( int CityId){
+    private void getServiceData( int CityId){
        movieOnShowFragmentImpl.getMovieOnShowData(CityId);
 
    }

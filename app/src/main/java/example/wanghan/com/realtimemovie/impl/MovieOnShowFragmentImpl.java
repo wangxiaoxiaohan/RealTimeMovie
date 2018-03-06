@@ -6,6 +6,9 @@ import example.wanghan.com.realtimemovie.api.ApiManager;
 
 
 import example.wanghan.com.realtimemovie.bean.TodayMovie.TodayMovieList;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -23,9 +26,9 @@ public class MovieOnShowFragmentImpl {
     }
     public  void  getMovieOnShowData(int CityId){
          ApiManager.getApiManager().getMovieOnShowService().getMovieOnShow(CityId)
-               .subscribeOn(Schedulers.io())
+                 .subscribeOn(Schedulers.io())
                  .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<TodayMovieList>() {
+                 .subscribe(new Observer<TodayMovieList>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
@@ -50,5 +53,6 @@ public class MovieOnShowFragmentImpl {
                 });
 
     }
+
 
 }

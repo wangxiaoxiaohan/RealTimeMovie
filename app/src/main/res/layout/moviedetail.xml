@@ -84,11 +84,12 @@
             <!--评论列表！   暂时使用scrollEnable属性禁用滑动，避免滑动冲突！
              后续会使用滑动冲突解决方案。-->
             <android.support.v7.widget.RecyclerView
-
                 android:id="@+id/movieDetailCommitRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+
                 />
         </LinearLayout>
 
