@@ -34,6 +34,10 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import example.wanghan.com.realtimemovie.Adapter.CommitsRecylerAdapter;
 import example.wanghan.com.realtimemovie.MainActivity;
@@ -205,6 +209,14 @@ public class MovieDetailActivity extends AppCompatActivity {
                 }
             }
         });*/
+        posterimageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MovieDetailActivity.this,PostImageActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -234,6 +246,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                  }
              })
              .into(posterimageView);
+
     sharePreferenceUtils.setString(MyApplication.getContext(),"thisMovieName",movieDetail.getTitleCn());
    // 存储当前电影的名字以便在监听中调用
     DetailNameText.setText(movieDetail.getTitleCn());
@@ -326,7 +339,9 @@ public class MovieDetailActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case  R.id.share_button:
+
                 //分享按钮的点击事件。
+
                 break;
          }
         return true;
@@ -334,5 +349,11 @@ public class MovieDetailActivity extends AppCompatActivity {
     public  void hideProgress(){
 
         progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

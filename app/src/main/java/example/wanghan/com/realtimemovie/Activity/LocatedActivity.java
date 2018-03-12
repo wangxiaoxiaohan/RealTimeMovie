@@ -1,6 +1,7 @@
 package example.wanghan.com.realtimemovie.Activity;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -50,8 +52,25 @@ public class LocatedActivity extends AppCompatActivity {
         nameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameButton.getText()!="")
-                finish();
+                if (nameButton.getText()!=""){
+                    AlertDialog.Builder dialog=new AlertDialog.Builder(LocatedActivity.this);
+                    dialog.setTitle("这是个对话框");
+                    dialog.setMessage("这没什么重要的");
+                    dialog.setCancelable(false);
+                    dialog.setPositiveButton("好的", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    dialog.show();
+                }
             }
         });
 

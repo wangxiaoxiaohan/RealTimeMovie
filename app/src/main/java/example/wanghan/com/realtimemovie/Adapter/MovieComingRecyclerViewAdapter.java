@@ -74,7 +74,8 @@ public class MovieComingRecyclerViewAdapter extends RecyclerView.Adapter<Recycle
                 .load(comingMovie.getImage())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-                .into(movieComingViewHolder.posterImage);
+
+              .into(movieComingViewHolder.posterImage);
           movieComingViewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
