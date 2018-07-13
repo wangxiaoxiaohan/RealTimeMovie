@@ -3,6 +3,7 @@ package example.wanghan.com.realtimemovie.impl;
 import android.util.Log;
 
 import example.wanghan.com.realtimemovie.Activity.MovieDetailActivity;
+import example.wanghan.com.realtimemovie.Fragment.MovieCommitFragment;
 import example.wanghan.com.realtimemovie.api.ApiManager;
 import example.wanghan.com.realtimemovie.bean.Ldqu.Ldqu;
 import example.wanghan.com.realtimemovie.bean.MovieCommit.MovieCommitList;
@@ -19,9 +20,11 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MovieDetailImpl {
     private MovieDetailActivity movieDetailActivity;
+    private MovieCommitFragment movieCommitFragment;
 
     public MovieDetailImpl(MovieDetailActivity movieDetailActivity) {
         this.movieDetailActivity=movieDetailActivity;
+        movieCommitFragment=new MovieCommitFragment();
     }
     public  void getMovieDetailData(int CityId,int movieId){
         ApiManager.getApiManager().getMovieDetailService().getMovieDetail(CityId,movieId)
@@ -120,7 +123,8 @@ public class MovieDetailImpl {
                     @Override
                     public void onNext(MovieCommitList movieCommits) {
                         Log.d("请求评论数据成功了！！！！！！！！！！！", "onNext: ");
-                      movieDetailActivity.upCommitsListItem(movieCommits);
+                      movieCommitFragment.upCommitsListItem(movieCommits);
+
                     }
 
                     @Override

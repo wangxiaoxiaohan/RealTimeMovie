@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -36,7 +38,11 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
 
+import java.util.ArrayList;
+
 import example.wanghan.com.realtimemovie.Adapter.CommitsRecylerAdapter;
+import example.wanghan.com.realtimemovie.Adapter.MovieCommitContainerAdapter;
+import example.wanghan.com.realtimemovie.Fragment.MovieCommitFragment;
 import example.wanghan.com.realtimemovie.MainActivity;
 import example.wanghan.com.realtimemovie.MyApplication;
 import example.wanghan.com.realtimemovie.R;
@@ -78,9 +84,10 @@ public class MovieDetailActivity extends AppCompatActivity {
     private LinearLayout actorlinerContent;
     private  TextView directorNametext;
     private CircleImageView circleImageView;
-    private RecyclerView commitsRecyclerView;
-    private   LinearLayoutManager linearLayoutManager;
-    private CommitsRecylerAdapter commitsRecylerAdapter;
+    private ArrayList<Fragment> fragments;
+    private  ViewPager MovieCommitContainer;
+
+
 
 
 
@@ -134,8 +141,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         detailDirectorImage= (ImageView) findViewById(R.id.detail_director_image);
         actorlinerContent= (LinearLayout) findViewById(R.id.actor_linear_content);
         directorNametext= (TextView) findViewById(R.id.detail_director_name);
-        commitsRecyclerView= (RecyclerView) findViewById(R.id.movieDetailCommitRecyclerView);
-
+        MovieCommitContainer= (ViewPager) findViewById(R.id.movie_commit_container);
 
 
         setSupportActionBar(toolbar);
@@ -156,12 +162,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         movieDetailImpl.getMovieCommitData(1,getIntent().getIntExtra("movieId",0));
 
 
-        linearLayoutManager=new LinearLayoutManager(getApplicationContext());
 
-        commitsRecyclerView.setLayoutManager(linearLayoutManager);
-        commitsRecyclerView.setNestedScrollingEnabled(false);
-        commitsRecylerAdapter=new CommitsRecylerAdapter(getApplicationContext());
-        commitsRecyclerView.setAdapter(commitsRecylerAdapter);
 
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
@@ -178,18 +179,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
             }
         });
-        commitsRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-            }
 
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-
-            }
-        });
         /**
         commitsRecylerAdapter.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             @override
@@ -213,6 +203,13 @@ public class MovieDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        fragments=new ArrayList<>();
+        MovieCommitFragment movieCommitFragment=new MovieCommitFragment();
+        fragments.add(movieCommitFragment);
+        MovieCommitContainer.setAdapter(new MovieCommitContainerAdapter(getSupportFragmentManager(),fragments));
+
+
 
     }
 
@@ -315,9 +312,6 @@ public class MovieDetailActivity extends AppCompatActivity {
                  }
 
 
-   }
-    public void upCommitsListItem(MovieCommitList movieCommitList){
-         commitsRecylerAdapter.addItem(movieCommitList.getMovieCommits());
    }
 
     @Override

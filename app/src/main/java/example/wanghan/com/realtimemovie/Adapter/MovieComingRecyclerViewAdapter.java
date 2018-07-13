@@ -70,7 +70,7 @@ public class MovieComingRecyclerViewAdapter extends RecyclerView.Adapter<Recycle
            movieComingViewHolder.movieName.setText(comingMovie.getTitle());
            movieComingViewHolder.directorText.setText("导演:"+comingMovie.getDirector());
            movieComingViewHolder.actorText.setText("主演:"+comingMovie.getActor1() +"/"+ comingMovie.getActor2());
-        Glide.with(mContext)
+          Glide.with(mContext)
                 .load(comingMovie.getImage())
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
