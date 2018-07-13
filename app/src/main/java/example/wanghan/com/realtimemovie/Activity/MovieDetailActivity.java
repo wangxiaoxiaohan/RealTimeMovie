@@ -34,10 +34,7 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
+
 
 import example.wanghan.com.realtimemovie.Adapter.CommitsRecylerAdapter;
 import example.wanghan.com.realtimemovie.MainActivity;
@@ -254,7 +251,6 @@ public class MovieDetailActivity extends AppCompatActivity {
     StringBuilder sb=new StringBuilder();
     for(String element:movieDetail.getType())
     {
-
         sb.append(element+"/");
     }
     DetaisStyleyearText.setText(movieDetail.getYear()+"/"+sb);
@@ -339,9 +335,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case  R.id.share_button:
-
                 //分享按钮的点击事件。
-
                 break;
          }
         return true;

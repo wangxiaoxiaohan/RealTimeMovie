@@ -75,7 +75,7 @@ import example.wanghan.com.realtimemovie.impl.mainImpl;
                          //？
                 layoutParams.leftMargin=progressbarMoveDistance;
                 progressbar.setLayoutParams(layoutParams);
-                //实现进度条跟随的核心算法。
+
             }
 
             @Override
@@ -232,7 +232,6 @@ import example.wanghan.com.realtimemovie.impl.mainImpl;
              progressbar.setLayoutParams(layoutParams);
          }
      }
-
 
      @Override
      protected void onResume() {
